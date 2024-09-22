@@ -7,6 +7,8 @@ import Button from'./Button'
 import Select from './Select'
 import Input from './Input'
 import Login from './Login'
+import PostForm from './PostForm/PostForm'
+import PostCard from './POstCard'
 
 
 export{
@@ -18,5 +20,8 @@ export{
     Button , 
     Select , 
     Input ,
-    Login
+    Login , 
+    PostForm , 
+    PostCard , 
+    
 }
