@@ -6,6 +6,7 @@ import Logo from './Logo'
 import Button from'./Button'
 import Select from './Select'
 import Input from './Input'
+import Login from './Login'
 
 
 export{
@@ -17,4 +18,5 @@ export{
     Button , 
     Select , 
     Input ,
+    Login
 }
