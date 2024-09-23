@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import authService from './appwrite/auth'
 import {login , logout} from './store/authSlice'
 import { Header ,Footer } from './components'
+import { Outlet } from 'react-router-dom'
 
 function App() {
   
@@ -29,6 +30,7 @@ function App() {
     <div className='bg-gray-400 min-h-screen flex flex-wrap content-between'>
       <div className='w-full block'>
         <Header/>
+        <Outlet/>
         <Footer/>
       </div>
     </div>

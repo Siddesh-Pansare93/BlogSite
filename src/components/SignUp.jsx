@@ -4,12 +4,13 @@ import { login as AuthLogin } from '../store/authSlice'
 import { useNavigate , Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useForm  } from 'react-hook-form'
+import {Logo , Input , Button } from '../components'
 
 function SignUp() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const [register , handleSubmit ] = useForm()
-    const [error, setError] = useState("")
+    const {register , handleSubmit } = useForm()
+    const [error, setError] = React.useState("")
 
     const create = async (data)=>{
         setError("")
@@ -61,10 +62,6 @@ function SignUp() {
                         type="email"
                         {...register("email", {
                             required: true,
-                            validate: {
-                                matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                                "Email address must be a valid address",
-                            }
                         })}
                         />
                         <Input

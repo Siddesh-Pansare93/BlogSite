@@ -1,16 +1,13 @@
-import React  ,{useState , useEffect, Children} from 'react'
-import {  useNavigate } from 'react-router-dom'; 
-import { login } from '../store/authSlice';
-import authService from '../appwrite/auth';
-import { useSelector } from 'react-redux';
+import React, {useEffect, useState} from 'react'
+import {useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 
+export default function Protected({children, authentication = true}) {
 
-function Protected({children} , authentication) {
-    const authStatus = useSelector(state => state.Status)
-    const [loader, setLoader] = useState(second)
     const navigate = useNavigate()
+    const [loader, setLoader] = useState(true)
+    const authStatus = useSelector(state => state.status)
 
-   
     useEffect(() => {
         //TODO: make it more easy to understand
 
@@ -29,9 +26,6 @@ function Protected({children} , authentication) {
         }
         setLoader(false)
     }, [authStatus, navigate, authentication])
-  return (
-    <div>{loader ? <h1>Loading....</h1> : <>{Children}</> } </div>
-  )
-}
 
-export default Protected
+  return loader ? <h1>Loading...</h1> : <>{children}</>
+}
