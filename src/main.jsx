@@ -13,11 +13,13 @@ import Login from './Pages/Login.jsx'
 import Post from "./Pages/Post";
 
 import AllPosts from "./Pages/AllPosts";
+import Home from './Pages/Home.jsx'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App/>}>
+      <Route path = "/" element={<AuthLayout authentication={false} >{<Home/>}</AuthLayout>} /> 
       <Route path = "/login" element={<AuthLayout authentication={false} >{<Login/>}</AuthLayout>} /> 
       <Route path = "/signup" element={<AuthLayout authentication={false} >{<Signup/>}</AuthLayout>} /> 
       <Route path = "/all-posts" element={<AuthLayout authentication >{<AllPosts/>}</AuthLayout>} /> 
