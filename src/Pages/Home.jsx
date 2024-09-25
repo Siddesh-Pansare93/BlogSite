@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 function Home() {
 
   const [posts, setPosts] = useState([])
-  console.log(posts)
+  
 
 
   const navigate = useNavigate()
