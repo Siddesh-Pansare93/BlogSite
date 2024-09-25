@@ -21,7 +21,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<App/>}>
       <Route path = "/" element={<AuthLayout authentication={false} >{<Home/>}</AuthLayout>} /> 
       <Route path = "/login" element={<AuthLayout authentication={false} >{<Login/>}</AuthLayout>} /> 
-      <Route path = "/signup" element={<AuthLayout authentication={false} >{<Signup/>}</AuthLayout>} /> 
+      <Route path = "/signup" element={<AuthLayout authentication={false} >{<SignUp/>}</AuthLayout>} /> 
       <Route path = "/all-posts" element={<AuthLayout authentication >{<AllPosts/>}</AuthLayout>} /> 
       <Route path = "/add-post" element={<AuthLayout authentication >{<AddPost/>}</AuthLayout>} /> 
       <Route path = "/edit-post/:slug" element={<AuthLayout authentication >{<EditPost/>}</AuthLayout>} /> 
