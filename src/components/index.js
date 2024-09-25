@@ -11,7 +11,7 @@ import PostForm from './PostForm/PostForm'
 import PostCard from './PostCard'
 import AuthLayout from './AuthLayout'
 import RTE from "./RTE" 
-import SignUp from './Signup'
+import SignUp from './SignUp'
 
 
 export{
