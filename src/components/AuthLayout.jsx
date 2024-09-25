@@ -6,7 +6,7 @@ export default function Protected({children, authentication = true}) {
 
     const navigate = useNavigate()
     const [loader, setLoader] = useState(true)
-    const authStatus = useSelector(state => state.status)
+    const authStatus = useSelector(state => state.auth.status)
 
     useEffect(() => {
         //TODO: make it more easy to understand

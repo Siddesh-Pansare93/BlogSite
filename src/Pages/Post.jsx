@@ -11,7 +11,7 @@ function Post() {
     const navigate = useNavigate()
 
 
-    const userData = useSelector(state => state.userData)
+    const userData = useSelector(state => state.auth.userData)
     const {slug} = useParams()
    
     
