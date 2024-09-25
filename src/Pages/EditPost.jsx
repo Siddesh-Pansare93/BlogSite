@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useState } from 'react'
 import service from '../appwrite/config'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { PostForm , Container } from '../components'
 
 function EditPost() {
     const [post , setPost ] = useState()
-    const slug =  useParams()
+    const {slug} =  useParams()
     const navigate = useNavigate()
     
     useEffect(()=>{

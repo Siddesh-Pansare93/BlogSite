@@ -14,21 +14,32 @@ export class Service {
         this.bucket = new Storage(this.client)
     }
 
-    async createPost(slug , { title, content, featuredImage, status, userId }) {
+    async createPost({title, slug, content, featuredImage, status, userId}){
+        console.log(userId);
+        console.log(title)
+        
         try {
-            return await this.database.createDocument(conf.appwriteDatabaseId,
-                conf.appwriteCollectionId, slug,
+            return await this.database.createDocument(
+                conf.appwriteDatabaseId,
+                conf.appwriteCollectionId,
+                slug,
                 {
-                    title , content , featuredImage , status 
-                })
+                    title,
+                    content,
+                    featuredImage,
+                    status,
+                    userId,
+                }
+            )
         } catch (error) {
-            console.log("Appwrite Service :: createPost :: error :" , error)
-
+            console.log("Appwrite serive :: createPost :: error", error);
         }
     }
 
-    async updatePost ({ title, slug, content, featuredImage, status, userId } ){
+    async updatePost (slug , { title, content, featuredImage, status, userId } ){
         try {
+            console.log(slug);
+            
             return await this.database.updateDocument(conf.appwriteDatabaseId,
                  conf.appwriteCollectionId, slug,
                 {

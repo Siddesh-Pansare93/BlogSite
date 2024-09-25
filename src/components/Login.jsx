@@ -15,8 +15,9 @@ function Login() {
 
     const login = async function (data) {
       setError('')
+      console.log(data)
       try {
-        const session = await authService.login({data})
+        const session = await authService.login(data)
         if (session) {
           const userData = await authService.getCurrentUser()
           if (userData) {
@@ -63,7 +64,7 @@ function Login() {
             {...register("email", {
               required: true,
               validate : {
-                matchPatern : (value)=>/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test (value) || "Please enter a valid email address"
+                // matchPatern : (value)=>/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test (value) || "Please enter a valid email address"
               }
             })}
             />

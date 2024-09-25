@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams ,Link } from 'react-router-dom'
 import service from '../appwrite/config'
 import { useSelector } from 'react-redux'
+import { Container , Button } from '../components'
+import parse from "html-react-parser";
 
 function Post() {
 
@@ -10,7 +12,9 @@ function Post() {
 
 
     const userData = useSelector(state => state.userData)
-    const slug = useParams()
+    const {slug} = useParams()
+   
+    
 
     const isAuthor = post && userData ? post.userId ===  userData.$id : false
 
@@ -44,7 +48,7 @@ function Post() {
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={service.getFilePreview(post.featuredImage)}
                         alt={post.title}
                         className="rounded-xl"
                     />
@@ -52,9 +56,9 @@ function Post() {
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
                             <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-green-500" className="mr-3">
-                                    Edit
-                                </Button>
+                            <Button bgColor="bg-green-500" className='mr-3'>
+                                Edit 
+                            </Button>
                             </Link>
                             <Button bgColor="bg-red-500" onClick={deletePost}>
                                 Delete
