@@ -50,7 +50,7 @@ function AllPosts() {
     }
 
     return (
-        <div className="min-h-screen pt-20">
+        <div className="min-h-screen">
             {/* Header Section */}
             <motion.section
                 className="py-16"

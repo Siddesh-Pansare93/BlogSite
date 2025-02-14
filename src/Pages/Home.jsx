@@ -45,7 +45,7 @@ function Home() {
 
   if (!status) {
     return (
-      <div className="min-h-screen pt-20">
+      <div className="min-h-screen">
         {/* Hero Section for Guests */}
         <motion.section
           className="relative py-32 overflow-hidden"
@@ -147,7 +147,7 @@ function Home() {
   }
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
       {/* Header Section */}
       <motion.section
         className="py-16"

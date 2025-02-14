@@ -63,7 +63,7 @@ function App() {
       <div className="relative z-10 min-h-screen flex flex-col">
         <Header />
         
-        <main className="flex-grow">
+        <main className="flex-grow pt-24">
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
