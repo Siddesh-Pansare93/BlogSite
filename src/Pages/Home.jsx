@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import service from '../appwrite/config'
 import { Container, Logo, PostCard } from '../components'
 import { Link, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 function Home() {
 
@@ -9,7 +10,7 @@ function Home() {
   
 
 
-  const navigate = useNavigate()
+  
 
   useEffect(() => {
     service.getAllPosts().then((post) => {
@@ -20,7 +21,9 @@ function Home() {
 
   }, [])
 
-  if (posts.length === 0) {
+   const status = useSelector(state => state.auth.status)
+   
+  if (!status) {
     return (
       <div className="w-full py-8 mt-4 text-center">
         <Container>
